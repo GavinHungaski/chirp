@@ -1,0 +1,46 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+*.egg-info/
+.eggs/
+
+# Distribution / packaging
+.Python
+build/
+dist/
+wheels/
+*.egg
+*.whl
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs and editors
+.idea/  # IntelliJ IDEA
+.vscode/ # VS Code
+*.iml   # IntelliJ IDEA module files
+*.swp   # Vim swap files
+*~      # Emacs backup files
+
+# OS-specific files
+.DS_Store # macOS
+Thumbs.db # Windows
+ehthumbs.db # Windows
+Desktop.ini # Windows
+
+# Testing
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Logs and temporary files
+*.log
+tmp/
