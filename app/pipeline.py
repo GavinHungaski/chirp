@@ -1,9 +1,9 @@
 import asyncio
 import logging
-from app.listen import listen
-from app.think import think
-from app.speak import speak
-from app.ui import ui
+from app.agents.listen import listen
+from app.agents.think import think
+from app.agents.speak import speak
+from app.ui.main_ui import ui
 
 
 # Basic logger
