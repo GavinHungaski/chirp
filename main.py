@@ -5,7 +5,6 @@ import sys
 
 def main():
     try:
-        # Handle SIGINT (Ctrl+C) gracefully
         signal.signal(signal.SIGINT, lambda _, __: sys.exit(0))
         
         asyncio.run(run_agents())

@@ -7,7 +7,6 @@ from app.agents.speak import speak
 from app.ui.main_ui import ui
 
 
-# Basic logger
 logging.basicConfig(
     level=logging.INFO,
     format=" %(asctime)s %(levelname)s %(name)s: %(message)s",
