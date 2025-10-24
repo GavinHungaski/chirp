@@ -1,5 +1,6 @@
 import asyncio
 import logging
+import threading
 from app.agents.listen import listen
 from app.agents.think import think
 from app.agents.speak import speak
@@ -20,6 +21,9 @@ logger = logging.getLogger(__name__)
 
 async def run_agents():
     try:
+        ui_thread = threading.Thread(target=ui, args=(logger,), daemon=True)
+        ui_thread.start()
+
         # The message queue used for inter-component communication
         message_queue = asyncio.Queue()
 
@@ -38,6 +42,7 @@ async def run_agents():
 
     # Gracefully shut down and handle logging of errors
     except KeyboardInterrupt:
+        ui_thread.join(timeout=1)
         logger.info("Shutting down (KeyboardInterrupt)...")
         for t in tasks:
             t.cancel()
