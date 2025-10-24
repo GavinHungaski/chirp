@@ -1,19 +1,18 @@
-import asyncio
-from app.pipeline import run_agents
-import signal
-import sys
+import logging
+
+from app.ui.main_ui import ui
 
 def main():
-    try:
-        signal.signal(signal.SIGINT, lambda _, __: sys.exit(0))
-        
-        asyncio.run(run_agents())
-    except KeyboardInterrupt:
-        pass
-    except Exception as e:
-        print(f"Error: {e}")
-    finally:
-        sys.exit(0)
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        handlers=[
+            logging.FileHandler("pipeline.log"),
+            logging.StreamHandler()
+        ],
+    )
+    root_logger = logging.getLogger()
+    ui(logger=root_logger)
 
 if __name__ == "__main__":
     main()
