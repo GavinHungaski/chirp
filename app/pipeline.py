@@ -5,6 +5,7 @@ from app.agents.think import think
 from app.agents.speak import speak
 from app.ui.main_ui import ui
 
+
 # Basic logger
 logging.basicConfig(
     level=logging.INFO,
@@ -17,8 +18,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-# Main function to run the pipeline
-async def run():
+async def run_agents():
     try:
         # The message queue used for inter-component communication
         message_queue = asyncio.Queue()
@@ -26,7 +26,6 @@ async def run():
         logger.info("Starting pipeline")
 
         tasks = [
-            asyncio.create_task(ui(logger), name="ui"),
             asyncio.create_task(listen(logger, message_queue), name="listen"),
             asyncio.create_task(think(message_queue), name="think"),
             asyncio.create_task(speak(message_queue), name="speak"),

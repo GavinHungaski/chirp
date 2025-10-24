@@ -1,9 +1,9 @@
 import asyncio
-from app.pipeline import run
+from app.pipeline import run_agents
 
 def main():
     try:
-        asyncio.run(run())
+        asyncio.run(run_agents())
     except KeyboardInterrupt:
         pass
 
