@@ -45,7 +45,7 @@ async def listen(logger, message_queue):
             # Flatten the array and convert to 1D
             audio_data = audio_data.flatten()
 
-            segments, _ = model.transcribe(audio_data, beam_size=4) 
+            segments, _ = model.transcribe(audio_data, beam_size=5) 
 
             for s in segments:
                 if s.text.strip(): # Only process non-empty text
