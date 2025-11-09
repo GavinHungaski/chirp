@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------- #
 #                                                                              #
-#   Main entry point for the application.                                      #
-#   Sets up logging and starts the user interface.                             #
+#                   Main entry point for the application.                      #
+#               Sets up logging and starts the user interface.                 #
 #                                                                              #
 # ---------------------------------------------------------------------------- #
 
