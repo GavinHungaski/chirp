@@ -1,5 +1,11 @@
-import logging
+# ---------------------------------------------------------------------------- #
+#                                                                              #
+#   Main entry point for the application.                                      #
+#   Sets up logging and starts the user interface.                             #
+#                                                                              #
+# ---------------------------------------------------------------------------- #
 
+import logging
 from app.ui.main_ui import ui
 
 def main():
